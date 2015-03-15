@@ -3,9 +3,13 @@
 _PATTERN=$1
 _SIDESHOULDBEACTIVE=$2
 
-echo "aws cli describe ELBs... "
+#  get active side ... 
 
-_RESULT=1
+_EXITCODE=$?
 
-exit $_RESULT
+_RESULT="A"
+
+echo $_RESULT
+
+exit $_EXITCODE
 
