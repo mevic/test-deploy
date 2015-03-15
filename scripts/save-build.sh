@@ -6,7 +6,9 @@ _DATABAG=$2
 _BKP=$3
 _TIMESTAMP=`date +"%m-%d-%y_%H%M%S_%z"`
 _BKPFOLDER=$4
+_NEWSIDE=$5
 
-knife data bag show $_DATABAGDIR $_DATABAG --format json >> $_BKP
+knife data bag show $_DATABAGDIR $_DATABAG --format json > $_BKP
 cp $_BKP ${_BKPFOLDER}/${_DATABAGDIR}_${_DATABAG}_${_TIMESTAMP}
 
+knife data bag from file ${_DATABAGDIR}-${_NEWSIDE} $_BKP
